@@ -18,7 +18,7 @@ io.on('connect', (socket) => {
   socket.on('teste', (res) => {
     console.log('mensagem recebida nesse momento:', res);
 
-    io.to(socket.id).emit(res);
+    socket.broadcast.emit('teste', res);
   });
 });
 
